@@ -20,8 +20,9 @@ alert("port by bog")
 // performance detectors for low-end devices
 const lt=document.getElementById("loading-text"),cv=document.getElementById("unity-canvas"),mw=document.getElementById("unity-mobile-warning"),fg=document.getElementById("fps-graph"),fc=document.getElementById("fps-canvas");let lb=0,hd=false,tm_id;
 let tm='912.81',fh=[],ml=90; // tm: total MB shown during load
-// mark low-end devices (<=2GB memory or <=2 CPU cores)
-const lowEnd = (navigator.deviceMemory && navigator.deviceMemory <= 2) || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2);
+// force low-end mode regardless of actual hardware
+const lowEnd = true; // always treat device as low-performance
+// (the original detection code has been retired)
 if (lowEnd) {
     document.body.classList.add('lowend');
     // hide FPS graph and save button to reduce DOM overhead
